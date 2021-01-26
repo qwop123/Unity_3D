@@ -39,4 +39,16 @@ public class Myball : MonoBehaviour
        //  rigid.AddTorque(Vector3.up);
 
     }
+
+   private void OnTriggerStay(Collider other)
+    {
+        if(other.name == "Cube" )
+            rigid.AddForce(Vector3.up * 2, ForceMode.Impulse);
+    }
+
+    public void Jump()
+    {
+
+        rigid.AddForce(Vector3.up * 20, ForceMode.Impulse);
+    }
 }
